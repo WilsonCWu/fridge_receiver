@@ -1,0 +1,2 @@
+# fridge_receiver
+init
