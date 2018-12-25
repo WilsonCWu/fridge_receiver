@@ -3,7 +3,8 @@ import StepperMotor
 
 
 def main():
-    StepperMotor.RotateMotorFullCircle
+    print("running main")
+    StepperMotor.RotateMotorFullCircle()
 
 if __name__ == "__main__":
     main()
