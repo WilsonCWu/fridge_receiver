@@ -18,6 +18,7 @@ halfstep_seq = [
 ]
 print("Ran init for motor")
 def RotateMotorFullCircle():
+  print("Rotating motor")
   for i in range(512):
     for halfstep in range(8):
       for pin in range(4):

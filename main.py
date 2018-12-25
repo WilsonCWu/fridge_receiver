@@ -1,10 +1,20 @@
 import DataQueue
 import StepperMotor
 
+cycleLength = 5
+def run():
+  print("Starting full process")
+  StepperMotor.RotateMotorFullCircle()
 
 def main():
-    print("running main")
-    StepperMotor.RotateMotorFullCircle()
+  while True:
+    messages = getMessages()
+    for message in messages:
+      print("Message Received: " + message)
+      if message == "run":
+        run()
+
+    time.sleep(cycleLength)
 
 if __name__ == "__main__":
     main()

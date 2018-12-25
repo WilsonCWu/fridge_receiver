@@ -7,6 +7,7 @@ queue = sqs.get_queue_by_name(QueueName='fridge')
 print("Queue init")
 
 def getMessages():
+  print("Getting Mesages")
   messages = []
   # Process messages by printing out body
   for message in queue.receive_messages():
