@@ -12,7 +12,7 @@ def main():
     messages = DataQueue.GetMessages()
     for message in messages:
       print("Message Received: " + message)
-      if message == "run":
+      if message == "run" or message == "Run":
         run()
 
     time.sleep(cycleLength)
