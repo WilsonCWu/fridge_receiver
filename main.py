@@ -8,7 +8,7 @@ def run():
 
 def main():
   while True:
-    messages = getMessages()
+    messages = DataQueue.GetMessages()
     for message in messages:
       print("Message Received: " + message)
       if message == "run":

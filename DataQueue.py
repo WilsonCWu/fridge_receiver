@@ -6,7 +6,7 @@ sqs = boto3.resource('sqs', region_name='us-west-2')
 queue = sqs.get_queue_by_name(QueueName='fridge')
 print("Queue init")
 
-def getMessages():
+def GetMessages():
   print("Getting Mesages")
   messages = []
   # Process messages by printing out body
