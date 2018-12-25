@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 control_pins = [12,16,18,22]
 for pin in control_pins:
