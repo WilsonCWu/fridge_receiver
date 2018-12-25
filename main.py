@@ -1,3 +1,4 @@
+import time
 import DataQueue
 import StepperMotor
 
