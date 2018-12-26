@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-control_pins = [12,16,18,22]
+control_pins = [16,18,22,32]
 for pin in control_pins:
   GPIO.setup(pin, GPIO.OUT)
   GPIO.output(pin, 0)
@@ -19,6 +19,7 @@ halfstep_seq = [
 print("Ran init for motor")
 def RotateMotorFullCircle():
   print("Rotating motor")
+  GPIO.setmode(GPIO.BOARD)
   for i in range(512):
     for halfstep in range(8):
       for pin in range(4):
