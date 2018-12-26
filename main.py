@@ -8,6 +8,12 @@ import Anova
 cycleLength = 5
 targetTemp = 70.0
 
+def openDoor():
+  Servo.OpenDoor()
+
+def closeDoor():
+  Servo.CloseDoor()
+
 def heatWater():
   Anova.WarmUpAndMaintain(targetTemp)
 
@@ -30,10 +36,10 @@ def main():
         heatWater()
       elif message == "dispense" or message == "Dispense":
         dispenseFood()
-      elif message == "dispense" or message == "Dispense":
-        dispenseFood()
-      elif message == "dispense" or message == "Dispense":
-        dispenseFood()
+      elif message == "openDoor" or message == "OpenDoor":
+        openDoor()
+      elif message == "closeDoor" or message == "CloseDoor":
+        closeDoor()
 
     time.sleep(cycleLength)
   StepperMotor.Quit()

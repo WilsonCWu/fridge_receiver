@@ -15,13 +15,19 @@ wiringpi.pwmSetMode(wiringpi.GPIO.PWM_MODE_MS)
 wiringpi.pwmSetClock(192)
 wiringpi.pwmSetRange(2000)
  
-delay_period = 0.01
+delay_period = 3
+closed_position = 50
+opened_position = 250
+wiringpi.pwmWrite(18, closed_position)
+
+print("Ran init for servo")
 
 def OpenDoor():
-  for pulse in range(50, 250, 1):
-    wiringpi.pwmWrite(18, pulse)
-    time.sleep(delay_period)
+  print("Opening door")
+  wiringpi.pwmWrite(18, opened_position)
+  time.sleep(delay_period)
+
 def CloseDoor():
-  for pulse in range(250, 50, -1):
-    wiringpi.pwmWrite(18, pulse)
-    time.sleep(delay_period)
+  print("Closing door")
+  wiringpi.pwmWrite(18, closed_position)
+  time.sleep(delay_period)
