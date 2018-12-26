@@ -1,11 +1,21 @@
 import time
 import DataQueue
 import StepperMotor
+import Anova
 
 cycleLength = 5
+targetTemp = 80
+
+def heatWater():
+  Anova.WarmUpAndMaintain(targetTemp)
+  
+def dispenseFood():
+  StepperMotor.RotateMotorFullCircle()
+
 def run():
   print("Starting full process")
-  StepperMotor.RotateMotorFullCircle()
+  heatWater()
+  dispenseFood()
 
 def main():
   while True:
@@ -14,6 +24,10 @@ def main():
       print("Message Received: " + message)
       if message == "run" or message == "Run":
         run()
+      elif message == "cook" or message == "Cook":
+        heatWater()
+      elif message == "dispense" or message == "Dispense":
+        dispenseFood()
 
     time.sleep(cycleLength)
 
