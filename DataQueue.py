@@ -1,7 +1,17 @@
 import boto3
 
+
+f=open("passwords/aws_key", "r")
+key = f.read()
+f=open("passwords/aws_secret", "r")
+secret = f.read()
 # Get the service resource
-sqs = boto3.resource('sqs', region_name='us-west-2')
+sqs = boto3.resource(
+    'sqs',
+    region_name='us-west-2',
+    aws_access_key_id = key,
+    aws_secret_access_key = secret)
+
 # Get the queue
 queue = sqs.get_queue_by_name(QueueName='fridge')
 print("Queue init")
