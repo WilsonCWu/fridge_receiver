@@ -2,9 +2,9 @@ import boto3
 
 
 f=open("passwords/aws_key", "r")
-key = f.read()
+key = f.read().rstrip()
 f=open("passwords/aws_secret", "r")
-secret = f.read()
+secret = f.read().rstrip()
 # Get the service resource
 sqs = boto3.resource(
     'sqs',
