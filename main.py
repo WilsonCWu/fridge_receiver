@@ -4,11 +4,11 @@ import StepperMotor
 import Anova
 
 cycleLength = 5
-targetTemp = 80
+targetTemp = 70.0
 
 def heatWater():
   Anova.WarmUpAndMaintain(targetTemp)
-  
+
 def dispenseFood():
   StepperMotor.RotateMotorFullCircle()
 
