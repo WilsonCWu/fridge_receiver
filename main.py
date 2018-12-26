@@ -30,6 +30,7 @@ def main():
         dispenseFood()
 
     time.sleep(cycleLength)
+  StepperMotor.Quit()
 
 if __name__ == "__main__":
     main()
