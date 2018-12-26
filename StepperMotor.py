@@ -1,11 +1,16 @@
 import RPi.GPIO as GPIO
 import time
+
+control_pins = [16,18,22,32]
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-control_pins = [16,18,22,32]
+
+
 for pin in control_pins:
   GPIO.setup(pin, GPIO.OUT)
   GPIO.output(pin, 0)
+
 halfstep_seq = [
   [1,0,0,0],
   [1,1,0,0],
@@ -25,5 +30,3 @@ def RotateMotorFullCircle():
         GPIO.output(control_pins[pin], halfstep_seq[halfstep][pin])
       time.sleep(0.001)
 
-def Quit():
-  GPIO.cleanup()
