@@ -2,6 +2,7 @@ import time
 import Init
 import DataQueue
 import StepperMotor
+import Servo
 import Anova
 
 cycleLength = 5
@@ -27,6 +28,10 @@ def main():
         run()
       elif message == "cook" or message == "Cook":
         heatWater()
+      elif message == "dispense" or message == "Dispense":
+        dispenseFood()
+      elif message == "dispense" or message == "Dispense":
+        dispenseFood()
       elif message == "dispense" or message == "Dispense":
         dispenseFood()
 
