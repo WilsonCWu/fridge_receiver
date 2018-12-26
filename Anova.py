@@ -9,7 +9,7 @@ def WarmUpAndMaintain(goalTemp):
   pa.set_temperature(goalTemp)
   pa.start_anova()
   while True:
-    time.Sleep(10)
+    time.sleep(10)
     curTemp = pa.get_current_temperature()
     print("Goal Temp: %s. Cur Temp: %s." % (goalTemp, curTemp))
     if abs(goalTemp-curTemp) < 3:
