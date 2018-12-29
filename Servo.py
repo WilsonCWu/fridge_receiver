@@ -16,8 +16,10 @@ wiringpi.pwmSetClock(192)
 wiringpi.pwmSetRange(2000)
  
 delay_period = 3
-closed_position = 50
-opened_position = 250
+hinge_closed = 200
+hinge_opened = 130
+wedge_closed = 180
+wedge_opened = 90
 wiringpi.pwmWrite(18, closed_position)
 
 print("Ran init for servo")
