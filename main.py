@@ -17,8 +17,16 @@ def closeDoor():
 def heatWater():
   Anova.WarmUpAndMaintain(targetTemp)
 
-def dispenseFood():
+def dropFood():
   StepperMotor.RotateMotorFullCircle()
+
+def dispenseFood():
+  openDoor()
+  time.sleep(3)
+  dropFood()
+  time.sleep(3)
+  closeDoor()
+  time.sleep(3)
 
 def run():
   print("Starting full process")
@@ -40,6 +48,8 @@ def main():
         openDoor()
       elif message == "closeDoor" or message == "CloseDoor":
         closeDoor()
+      elif message == "drop" or message == "Drop":
+        dropFood()
 
     time.sleep(cycleLength)
   StepperMotor.Quit()

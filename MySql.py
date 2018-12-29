@@ -10,7 +10,10 @@ curs=db.cursor()
 
 def GetMessages:
   curs.execute ("SELECT * FROM commands")
+  commands = []
   print "\nDate       Time    Command"
   print "============================"
   for value in curs.fetchall():
+    commands.append(value[2])
     print str(value[0])+" "+str(value[1])+"   "+value[2]
+  return commands
