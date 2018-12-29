@@ -8,7 +8,7 @@ password = f.read().rstrip()
 db = MySQLdb.connect("localhost", username, password, "fridge")
 curs=db.cursor()
 
-def GetMessages:
+def GetMessages():
   curs.execute ("SELECT * FROM commands")
   commands = []
   print "\nDate       Time    Command"
