@@ -18,4 +18,5 @@ def GetMessages():
     deleteStr = "DELETE FROM commands WHERE date='%s' AND time='%s' AND command='%s'" % (str(value[0]), str(value[1]), value[2])
     curs.execute(deleteStr)
     print str(value[0])+" "+str(value[1])+"   "+value[2]
+  db.commit()
   return commands
