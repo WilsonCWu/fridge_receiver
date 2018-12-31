@@ -15,6 +15,6 @@ def GetMessages():
   print "============================"
   for value in curs.fetchall():
     commands.append(value[2])
-    curs.execute("DELETE FROM commands where date='%s' time='%s' command='%s'" % (str(value[0]), str(value[1]), value[2]))
+    curs.execute("DELETE FROM commands WHERE date='%s' time='%s' command='%s'" % (str(value[0]), str(value[1]), value[2]))
     print str(value[0])+" "+str(value[1])+"   "+value[2]
   return commands
