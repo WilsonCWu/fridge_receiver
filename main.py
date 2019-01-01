@@ -37,6 +37,7 @@ def run():
 
 def main():
   while True:
+    print("Running main loop")
     messages = DataQueue.GetMessages()
     messages2 = MySql.GetMessages()
     messages += messages2

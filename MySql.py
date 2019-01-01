@@ -9,14 +9,12 @@ db = MySQLdb.connect("localhost", username, password, "fridge")
 curs=db.cursor()
 
 def GetMessages():
+  print("Getting SQL Messages")
   curs.execute("SELECT * FROM commands")
   commands = []
-  print "\nDate       Time    Command"
-  print "============================"
   for value in curs.fetchall():
     commands.append(value[2])
     deleteStr = "DELETE FROM commands WHERE date='%s' AND time='%s' AND command='%s'" % (str(value[0]), str(value[1]), value[2])
     curs.execute(deleteStr)
-    print str(value[0])+" "+str(value[1])+"   "+value[2]
   db.commit()
   return commands
