@@ -1,9 +1,11 @@
 import time
 import Init
 import DataQueue
+import MySql
 import StepperMotor
 import Servo
 import Anova
+
 
 cycleLength = 5
 targetTemp = 70.0
@@ -36,6 +38,8 @@ def run():
 def main():
   while True:
     messages = DataQueue.GetMessages()
+    messages2 = MySql.GetMessages()
+    messages += messages2
     for message in messages:
       print("Message Received: " + message)
       if message == "run" or message == "Run":
