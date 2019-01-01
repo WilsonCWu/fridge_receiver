@@ -20,7 +20,7 @@ hinge_closed = 200
 hinge_opened = 130
 wedge_closed = 180
 wedge_opened = 90
-wiringpi.pwmWrite(18, closed_position)
+#wiringpi.pwmWrite(18, closed_position)
 
 print("Ran init for servo")
 
