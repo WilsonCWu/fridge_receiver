@@ -26,10 +26,10 @@ print("Ran init for servo")
 
 def OpenDoor():
   print("Opening door")
-  wiringpi.pwmWrite(18, opened_position)
-  time.sleep(delay_period)
+  #wiringpi.pwmWrite(18, hinge_opened)
+  #time.sleep(delay_period)
 
 def CloseDoor():
   print("Closing door")
-  wiringpi.pwmWrite(18, closed_position)
-  time.sleep(delay_period)
+  #wiringpi.pwmWrite(18, hinge_closed)
+  #time.sleep(delay_period)
