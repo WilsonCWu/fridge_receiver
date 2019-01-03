@@ -7,7 +7,7 @@ import Servo
 import Anova
 
 
-cycleLength = 5
+cycleLength = 1
 targetTemp = 70.0
 
 def openDoor():
@@ -39,8 +39,8 @@ def main():
   while True:
     print("Running main loop")
     messages = DataQueue.GetMessages()
-    messages2 = MySql.GetMessages()
-    messages += messages2
+    #messages2 = MySql.GetMessages()
+    #messages += messages2
     for message in messages:
       print("Message Received: " + message)
       if message == "run" or message == "Run":
