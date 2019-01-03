@@ -38,8 +38,8 @@ def run():
 def main():
   while True:
     print("Running main loop")
-    messages = DataQueue.GetMessages()
-    #messages2 = MySql.GetMessages()
+    messages = MySql.GetMessages()
+    #messages2 = DataQueue.GetMessages()
     #messages += messages2
     for message in messages:
       print("Message Received: " + message)
