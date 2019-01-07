@@ -2,7 +2,6 @@ import time
 import Init
 import DataQueue
 import MySql
-import StepperMotor
 import Servo
 import Anova
 
@@ -20,7 +19,7 @@ def heatWater():
   Anova.WarmUpAndMaintain(targetTemp)
 
 def dropFood():
-  StepperMotor.RotateMotorFullCircle()
+  Servo.DropFood()
 
 def dispenseFood():
   openDoor()

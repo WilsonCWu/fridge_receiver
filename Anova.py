@@ -18,6 +18,8 @@ def WarmUpAndMaintain(goalTemp):
         if abs(goalTemp-curTemp) < 3:
           break
       print("Temperature is ready")
+    except KeyboardInterrupt:
+      sys.exit()
     except:
       continue
     break
