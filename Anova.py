@@ -1,7 +1,6 @@
 import time
+import sys
 import pyanova
-
-
 
 def WarmUpAndMaintain(goalTemp):
   while True:
