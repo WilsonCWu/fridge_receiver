@@ -23,11 +23,11 @@ def dropFood():
 
 def dispenseFood():
   openDoor()
-  time.sleep(3)
+  time.sleep(0.5)
   dropFood()
-  time.sleep(3)
+  time.sleep(2)
   closeDoor()
-  time.sleep(3)
+  time.sleep(1)
 
 def run():
   print("Starting full process")
