@@ -1,6 +1,7 @@
 import time
 import sys
 import pyanova
+import subprocess
 
 def WarmUpAndMaintain(goalTemp):
   while True:
@@ -18,7 +19,9 @@ def WarmUpAndMaintain(goalTemp):
           break
       print("Temperature is ready")
     except KeyboardInterrupt:
+      subprocess.call(['./AnovaReset.sh'])
       sys.exit()
     except:
+      subprocess.call(['./AnovaReset.sh'])
       continue
     break
