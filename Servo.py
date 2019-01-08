@@ -20,7 +20,7 @@ address = 0x04
 
 print("Ran init for servo")
 def DropFood():
-    wiringpi.pwmWrite(18, 250)
+    wiringpi.pwmWrite(18, 90)
     time.sleep(dispenseTime)
     wiringpi.pwmWrite(18, 0)
 def OpenDoor():
