@@ -26,3 +26,5 @@ def GetMessages():
     # Let the queue know that the message is processed
     message.delete()
   return messages
+def Quit():
+  

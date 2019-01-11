@@ -5,7 +5,6 @@ import MySql
 import Servo
 import Anova
 
-
 cycleLength = 1
 targetTemp = 70.0
 
@@ -34,7 +33,7 @@ def run():
   heatWater()
   dispenseFood()
 
-def main():
+def loop():
   while True:
     print("Running main loop")
     messages = MySql.GetMessages()
@@ -54,9 +53,15 @@ def main():
         closeDoor()
       elif message == "drop" or message == "Drop":
         dropFood()
-
     time.sleep(cycleLength)
-  StepperMotor.Quit()
+def main():
+  try:
+    loop()
+  except KeyboardInterrupt:  #when 'Ctrl+C' is pressed, the program will exit
+    DataQueue.Quit()
+    MySql.Quit()
+    Servo.Quit()
+    Anova.Quit()
 
 if __name__ == "__main__":
     main()

@@ -2,6 +2,7 @@
 import time
 import smbus
 import wiringpi
+import RangeSensor
 
 # for dispenser servo
 wiringpi.wiringPiSetupGpio()
@@ -10,7 +11,7 @@ wiringpi.pwmSetMode(wiringpi.GPIO.PWM_MODE_MS)
 wiringpi.pwmSetClock(192)
 wiringpi.pwmSetRange(2000)
 wiringpi.pwmWrite(18, 0)
-dispenseTime = 7
+dispenseTimeout = 20
 # for RPI version 1, use "bus = smbus.SMBus(0)"
 bus = smbus.SMBus(1)
 
@@ -19,10 +20,12 @@ bus = smbus.SMBus(1)
 address = 0x04
 
 print("Ran init for servo")
+RangeSensor.setup()
+
 def DropFood():
-    wiringpi.pwmWrite(18, 90)
-    time.sleep(dispenseTime)
-    wiringpi.pwmWrite(18, 0)
+  wiringpi.pwmWrite(18, 90)
+  RangeSensor.WaitForDrop(dispenseTimeout)
+  wiringpi.pwmWrite(18, 0)
 def OpenDoor():
   print("Opening door")
   bus.write_byte(address, 1)
@@ -30,3 +33,6 @@ def OpenDoor():
 def CloseDoor():
   print("Closing door")
   bus.write_byte(address, 0)
+
+def Quit():
+  RangeSensor.Quit()

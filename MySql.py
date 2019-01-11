@@ -18,3 +18,5 @@ def GetMessages():
     curs.execute(deleteStr)
   db.commit()
   return commands
+def Quit():
+  

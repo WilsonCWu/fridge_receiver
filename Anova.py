@@ -25,3 +25,5 @@ def WarmUpAndMaintain(goalTemp):
       subprocess.call(['./AnovaReset.sh'])
       continue
     break
+def Quit():
+  subprocess.call(['./AnovaReset.sh'])
