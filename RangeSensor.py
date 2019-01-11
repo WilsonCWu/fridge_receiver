@@ -43,7 +43,7 @@ def loop():
     while(True):
         distance = getSonar()
         print ("The distance is : %.2f cm"%(distance))
-        time.sleep(1)
+        time.sleep(0.01)
         
 if __name__ == '__main__':     #program start from here
     setup()
