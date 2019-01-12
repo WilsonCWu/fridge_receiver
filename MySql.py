@@ -19,4 +19,4 @@ def GetMessages():
   db.commit()
   return commands
 def Quit():
-  
+  return
