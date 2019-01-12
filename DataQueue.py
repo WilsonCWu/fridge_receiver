@@ -27,4 +27,4 @@ def GetMessages():
     message.delete()
   return messages
 def Quit():
-  
+  return
