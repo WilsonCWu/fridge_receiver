@@ -23,6 +23,7 @@ print("Ran init for servo")
 RangeSensor.setup()
 
 def DropFood():
+  time.sleep(1)
   wiringpi.pwmWrite(18, 90)
   RangeSensor.WaitForDrop(dispenseTimeout)
   wiringpi.pwmWrite(18, 0)

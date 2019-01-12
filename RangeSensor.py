@@ -6,7 +6,7 @@ echoPin = 18
 MAX_DISTANCE = 220          #define the maximum measured distance
 timeOut = MAX_DISTANCE*60   #calculate timeout according to the maximum measured distance
 
-closeDist = 30
+closeDist = 20
 
 def WaitForDrop(dispenseTimeout):
   t0 = time.time()
@@ -50,7 +50,3 @@ def setup():
 def Quit():
   GPIO.cleanup()
 
-setup()
-while True:
-  print(getSonar())
-  time.sleep(0.1)
