@@ -6,7 +6,7 @@ import Servo
 import Anova
 
 cycleLength = 1
-targetTemp = 70.0
+targetTemp = 98
 
 def openDoor():
   Servo.OpenDoor()
